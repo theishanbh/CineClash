@@ -1,0 +1,24 @@
+@import "../../globals.scss";
+
+.footer{
+    background-color: #F7FAFC;
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
+    .footer__wrapper{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .footer__left{
+            flex: 1;
+            
+            .text__trademark{
+                color: black;
+                font-family: -apple-system, 'Segoe UI', 'Roboto','Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1.5rem;
+                margin-left: 2rem;
+            }
+        }
+    }
+}
