@@ -7,7 +7,7 @@ const Movie = (props) => {
     const handleWatched = () => {
         axios.post('https://movie-review-app-1.herokuapp.com/addwatched',{
             id: props.id
-        })
+        }).then(()=> window.location.reload(false))
         .catch(( error) => {
             console.log(error);
         });
@@ -16,7 +16,7 @@ const Movie = (props) => {
     const handleRemove = () => {
         axios.post('https://movie-review-app-1.herokuapp.com/removewatched',{
             id: props.id
-        })
+        }).then(()=> window.location.reload(false))
         .catch(( error) => {
             console.log(error);
         });

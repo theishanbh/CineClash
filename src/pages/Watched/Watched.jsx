@@ -11,6 +11,7 @@ const Watched = () => {
         .then((response) => {
             // console.log(response)
             setMovies([...response.data])
+            
         })
         .catch(( error) => {
             console.log(error);
