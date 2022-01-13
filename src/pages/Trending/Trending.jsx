@@ -8,7 +8,7 @@ const Trending = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/trending')
+        axios.get('https://movie-review-app-1.herokuapp.com/trending')
         .then((response) => {
             setMovies([...response.data])
         })

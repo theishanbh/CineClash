@@ -5,7 +5,7 @@ import './movie.scss'
 const Movie = (props) => {
     
     const handleWatched = () => {
-        axios.post('http://localhost:5000/addwatched',{
+        axios.post('https://movie-review-app-1.herokuapp.com/addwatched',{
             id: props.id
         })
         .catch(( error) => {
@@ -14,7 +14,7 @@ const Movie = (props) => {
     }
 
     const handleRemove = () => {
-        axios.post('http://localhost:5000/removewatched',{
+        axios.post('https://movie-review-app-1.herokuapp.com/removewatched',{
             id: props.id
         })
         .catch(( error) => {

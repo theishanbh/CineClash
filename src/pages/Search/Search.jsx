@@ -8,7 +8,7 @@ const Search = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios.post('http://localhost:5000/search', {
+        axios.post('https://movie-review-app-1.herokuapp.com/search', {
             search: `${search}`
         })
         .then((response) => {

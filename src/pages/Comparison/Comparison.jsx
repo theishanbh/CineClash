@@ -15,7 +15,7 @@ const Comparison = () => {
     const [moviesRightCompare, setMoviesRightCompare] = useState({})
 
     const handleChangeLeft = (e) => {
-        axios.post('http://localhost:5000/search', {
+        axios.post('https://movie-review-app-1.herokuapp.com/search', {
             search: `${searchLeft}`
         })
         .then((response) => {
@@ -27,7 +27,7 @@ const Comparison = () => {
         
     }
     const handleChangeRight = (e) => {
-        axios.post('http://localhost:5000/search', {
+        axios.post('https://movie-review-app-1.herokuapp.com/search', {
             search: `${searchRight}`
         })
         .then((response) => {
@@ -39,7 +39,7 @@ const Comparison = () => {
     }
 
     const leftCompare = (id) => {
-        axios.post('http://localhost:5000/movie', {
+        axios.post('https://movie-review-app-1.herokuapp.com/movie', {
             id: `${id}`
         })
         .then((response) => {
@@ -51,7 +51,7 @@ const Comparison = () => {
     }
 
     const rightCompare = (id) => {
-        axios.post('http://localhost:5000/movie', {
+        axios.post('https://movie-review-app-1.herokuapp.com/movie', {
             id: `${id}`
         })
         .then((response) => {

@@ -8,7 +8,7 @@ const CreateSession = () => {
     
     const handleGetRequestToken = () => {
         setButtonInteger(1)
-        axios.get('http://localhost:5000/requesttoken')
+        axios.get('https://movie-review-app-1.herokuapp.com/requesttoken')
         .then((response) => {
             setRequestToken(response.data.request_token)
         })
@@ -23,7 +23,7 @@ const CreateSession = () => {
 
     const handleGetSessionID = () => {
         setButtonInteger(3)
-        axios.post('http://localhost:5000/updatesession',{
+        axios.post('https://movie-review-app-1.herokuapp.com/updatesession',{
             request_token: requestToken
         })
         .catch(( error) => {

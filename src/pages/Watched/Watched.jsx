@@ -7,7 +7,7 @@ const Watched = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/watchlist')
+        axios.get('https://movie-review-app-1.herokuapp.com/watchlist')
         .then((response) => {
             // console.log(response)
             setMovies([...response.data])
