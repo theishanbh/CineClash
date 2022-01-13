@@ -15,6 +15,7 @@ function Topbar() {
                         <li> <Link to="/trending"> TRENDING</Link></li>
                         <li> <Link to="/watched"> WATCHED</Link></li>
                         <li> <Link to="/createsession"> CREATE SESSION</Link></li>
+                        <li> <Link to="/deletesession"> DELETE SESSION</Link></li>
                     </ul>
                 </div>
             </div>

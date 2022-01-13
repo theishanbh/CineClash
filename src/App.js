@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Trending from "./pages/Trending/Trending";
 import Watched from "./pages/Watched/Watched";
 import CreateSession from "./pages/CreateSession/CreateSession";
+import DeleteSession from "./pages/DeleteSession/DeleteSession";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/trending' element={<Trending/>} />
             <Route path='/watched' element={<Watched/>} />
             <Route path='/createsession' element={<CreateSession/>} />
+            <Route path='/deletesession' element={<DeleteSession/>} />
           </Routes>
           <Footer></Footer>
         </div>
