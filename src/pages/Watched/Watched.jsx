@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './watched.scss'
 import SearchList from '../../components/SearchList/SearchList'
@@ -44,14 +44,14 @@ const Watched = () => {
                     type="button"
                     onClick={handleLeftPage}
                 >
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/left.png"/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/left.png" alt="left"/>
                 </button>
                 <p>{currentPage} / {totalPage}</p>
                 <button
                     type="button"
                     onClick={handleRightPage}
                 >
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/right--v1.png"/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/right--v1.png" alt="right"/>
                 </button>
                     
                 
