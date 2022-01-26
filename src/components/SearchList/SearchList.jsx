@@ -9,7 +9,18 @@ const SearchList = (props) => {
             props.movies.map((movie, index) => {
                 return(
                     <Fragment>
-                        <Movie key={index} image={movie.poster_path} title={movie.title} date={movie.release_date} popularity={movie.popularity} vote_count={movie.vote_count} vote_average={movie.vote_average} id ={movie.id} watched={props.watched}></Movie>
+                        <Movie 
+                            key={index} 
+                            image={movie.poster_path} 
+                            title={movie.title} 
+                            date={movie.release_date} 
+                            popularity={movie.popularity} 
+                            vote_count={movie.vote_count} 
+                            vote_average={movie.vote_average} 
+                            id ={movie.id} 
+                            watched={props.watched}
+                        >
+                        </Movie>
                     </Fragment>
                 )
             })

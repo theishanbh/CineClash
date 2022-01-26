@@ -6,9 +6,9 @@ import axios from "axios"
 
 const Comparison = () => {
 
-    const [searchLeft, setSearchLeft] = useState("") // get search 
-    const [moviesLeft, setMoviesLeft] = useState([]) // set movie slide
-    const [moviesLeftCompare, setMoviesLeftCompare] = useState({})
+    const [searchLeft, setSearchLeft] = useState("") // used for search bar
+    const [moviesLeft, setMoviesLeft] = useState([]) // used for movie slider
+    const [moviesLeftCompare, setMoviesLeftCompare] = useState({}) // used to store info once + button is clicked
 
     const [searchRight, setSearchRight] = useState("")
     const [moviesRight, setMoviesRight] = useState([])
@@ -43,6 +43,7 @@ const Comparison = () => {
             id: `${id}`
         })
         .then((response) => {
+            console.log(response.data)
             setMoviesLeftCompare(response.data)
         })
         .catch(( error) => {
@@ -91,7 +92,18 @@ const Comparison = () => {
                                     <div className="movie">
                                         <div className="movie__image__container">
                                             {
-                                                movie.poster_path == null ? <img src="https://www.medstartr.com/main/images/no-image.png" alt="no img" className="movie__img" /> : <img src= {`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="no img" className="movie__img" />
+                                                movie.poster_path == null ? 
+                                                <img 
+                                                    src="https://www.medstartr.com/main/images/no-image.png" 
+                                                    alt="no img" 
+                                                    className="movie__img" 
+                                                /> 
+                                                : 
+                                                <img 
+                                                    src= {`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                                                    alt="no img" 
+                                                    className="movie__img" 
+                                                />
                                             }
                                             <div className="circle__button">
                                                 <IconButton
@@ -108,63 +120,63 @@ const Comparison = () => {
                     </div>
                     <div className="compare__info">
                     {
-                            moviesLeftCompare.title &&
-                            <h1 className="info__title">{moviesLeftCompare.title}</h1>
-                        }
-                        {
-                            moviesLeftCompare.release_date &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading">RELEASE DATE </div>
-                                    <img src="./Assets/Images/dateicon.png" alt="date icon" />
-                                    <div className="pulled__data"> {moviesLeftCompare.release_date}</div>
+                        moviesLeftCompare.title &&
+                        <h1 className="info__title">{moviesLeftCompare.title}</h1>
+                    }
+                    {
+                        moviesLeftCompare.release_date &&
+                            <div className="fetched__data">
+                                <div className="data__subheading">RELEASE DATE </div>
+                                <img src="./Assets/Images/dateicon.png" alt="date icon" />
+                                <div className="pulled__data"> {moviesLeftCompare.release_date}</div>
+                            </div>
+                    }
+                    {
+                        moviesLeftCompare.vote_average &&
+                            <div className="fetched__data">
+                                <div className="data__subheading">RATING </div>
+                                <img src="./Assets/Images/staricon.png" alt="star icon" />
+                                <div className="pulled__data"> {moviesLeftCompare.vote_average}</div>
+                            </div>
+                    }
+                    {
+                        moviesLeftCompare.vote_count &&
+                            <div className="fetched__data">
+                                <div className="data__subheading">VOTE COUNT </div>
+                                <img src="./Assets/Images/personicon.png" alt="star icon" />
+                                <div className="pulled__data"> {moviesLeftCompare.vote_count}</div>
+                            </div>
+                    }
+                    {
+                        moviesLeftCompare.runtime &&
+                            <div className="fetched__data">
+                                <div className="data__subheading"> RUNTIME </div>
+                                <img src="./Assets/Images/movieicon.png" alt="star icon" />
+                                <div className="pulled__data"> {(moviesLeftCompare.runtime/60).toFixed().toString() + " hours " + (moviesLeftCompare.runtime%60).toFixed().toString() + " minutes" }</div>
+                            </div>
+                    }
+                    {
+                        moviesLeftCompare.popularity &&
+                            <div className="fetched__data">
+                                <div className="data__subheading">POPULARITY</div>
+                                <img src="./Assets/Images/popularityicon.png" alt="star icon" />
+                                <div className="pulled__data"> {moviesLeftCompare.popularity}</div>
+                            </div>
+                    }
+                    {
+                        moviesLeftCompare.genres &&
+                            <div className="fetched__data">
+                                <div className="data__subheading">GENRES</div>
+                                <img src="./Assets/Images/genreicon.png" alt="star icon" />
+                                <div className="pulled__data">
+                                { 
+                                    moviesLeftCompare.genres.map((element) => (
+                                        (element.name +" ").toString()
+                                    ))
+                                }
                                 </div>
-                        }
-                        {
-                            moviesLeftCompare.vote_average &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading">RATING </div>
-                                    <img src="./Assets/Images/staricon.png" alt="star icon" />
-                                    <div className="pulled__data"> {moviesLeftCompare.vote_average}</div>
-                                </div>
-                        }
-                        {
-                            moviesLeftCompare.vote_count &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading">VOTE COUNT </div>
-                                    <img src="./Assets/Images/personicon.png" alt="star icon" />
-                                    <div className="pulled__data"> {moviesLeftCompare.vote_count}</div>
-                                </div>
-                        }
-                        {
-                            moviesLeftCompare.runtime &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading"> RUNTIME </div>
-                                    <img src="./Assets/Images/movieicon.png" alt="star icon" />
-                                    <div className="pulled__data"> {(moviesLeftCompare.runtime/60).toFixed().toString() + " hours " + (moviesLeftCompare.runtime%60).toFixed().toString() + " minutes" }</div>
-                                </div>
-                        }
-                        {
-                            moviesLeftCompare.popularity &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading">POPULARITY</div>
-                                    <img src="./Assets/Images/popularityicon.png" alt="star icon" />
-                                    <div className="pulled__data"> {moviesLeftCompare.popularity}</div>
-                                </div>
-                        }
-                        {
-                            moviesLeftCompare.genres &&
-                                <div className="fetched__data">
-                                    <div className="data__subheading">GENRES</div>
-                                    <img src="./Assets/Images/genreicon.png" alt="star icon" />
-                                    <div className="pulled__data">
-                                    { 
-                                        moviesLeftCompare.genres.map((element) => (
-                                            (element.name +" ").toString()
-                                        ))
-                                    }
-                                    </div>
-                                </div>
-                        }
+                            </div>
+                    }
                     </div>
                 </div>
                 <div className="compare__block left__border">
