@@ -12,6 +12,8 @@ import Trending from "./pages/Trending/Trending";
 import Watched from "./pages/Watched/Watched";
 import CreateSession from "./pages/CreateSession/CreateSession";
 import DeleteSession from "./pages/DeleteSession/DeleteSession";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
             <Route path='/watched' element={<Watched/>} />
             <Route path='/createsession' element={<CreateSession/>} />
             <Route path='/deletesession' element={<DeleteSession/>} />
+            <Route path='/login' element={<Login/>} />
+            <Route path='/register' element={<Register/>} />
           </Routes>
           <Footer></Footer>
         </div>

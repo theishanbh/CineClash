@@ -18,6 +18,15 @@ function Topbar() {
                         <li> <Link to="/deletesession"> DELETE SESSION</Link></li>
                     </ul>
                 </div>
+                <div className="topbar__right__navbar">
+                    
+                </div>
+            </div>
+            <div className="topbar__right__section">
+                <ul>
+                    <li> <Link to="/login"> LOGIN</Link></li>
+                    <li> <Link to="/register"> REGISTER</Link></li>
+                </ul>
             </div>
         </div>
     )
